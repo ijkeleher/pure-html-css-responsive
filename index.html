@@ -8,17 +8,40 @@
 <body>
 
 <div class="header">
-  <h1>Welcome to ECE Paris</h1>
+  <h1>Welcome to ECE Paris - École d'ingénieurs ECE</h1>
 </div>
 
 <div class="row">
     <section>
   <div class="col-3 col-s-3 menu">
     <ul>
-      <li>Programs</li>
-      <li>Accomodation</li>
-      <li>Campus</li>
-      <li>Student Guide</li>
+      <button type="button" class="collapsible">Programs</button>
+      <div class="content">
+        <p>Masters of Data Science</p>
+        <p>Graduate Diploma of Web Development</p>
+        <p>Master of Mathematics (Machine Learning)</p>
+      </div>
+
+      <button type="button" class="collapsible">Accomodation</button>
+      <div class="content">
+        <p>Grenélle</p>
+        <p>Bellevué</p>
+        <p>Tour Eiffel</p>
+      </div>
+
+      <button type="button" class="collapsible">Campus</button>
+      <div class="content">
+        <p>Paris</p>
+        <p>Lyons</p>
+      </div>
+
+      <button type="button" class="collapsible">Student Guide</button>
+      <div class="content">
+        <p>Francais</p>
+        <p>Espagnol</p>
+        <p>English</p>
+      </div>
+
     </ul>
 
     <br>
@@ -65,6 +88,8 @@
       <p>Si vous avez un bon esprit d’analyse, de l’empathie, que vous avez envie d’améliorer la vie des citoyens.</p>
       <h2>Machine Learning</h2>
       <p>L’école des technologies numériques connectées aux enjeux sociétaux. </p>
+      <h2>Mathematics</h2>
+      <p>Mathématiques pour les sciences de l’ingénieur. </p>
     </div>
   </div>
 </div>
@@ -72,6 +97,23 @@
 <div class="footer">
   <h2>Resize the Browser to Test Layouts</h2>
 </div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
 
 </body>
 </html>
